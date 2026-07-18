@@ -17,5 +17,3 @@ Connection over notifications.
 - Story Cards
 - Support Circle
 - Gentle Animations
-
-Built with ❤️ for my sister.
