@@ -1,0 +1,106 @@
+/* ============================================================
+   BumpBuddy Components CSS
+   Interactive states, hover effects, and component polish
+   ============================================================ */
+
+/* ── Role Cards hover/active ── */
+button[id^="role-"] {
+  outline: none;
+}
+
+button[id^="role-"]:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(61, 44, 44, 0.14) !important;
+}
+
+button[id^="role-"]:active {
+  transform: scale(0.97) !important;
+}
+
+/* ── Situation tiles hover/active ── */
+button[id^="tile-"]:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(61, 44, 44, 0.14) !important;
+}
+
+button[id^="tile-"]:active {
+  transform: scale(0.95) !important;
+}
+
+/* ── Request cards hover/active ── */
+button[id^="request-"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(61, 44, 44, 0.12) !important;
+}
+
+button[id^="request-"]:active {
+  transform: scale(0.98) !important;
+}
+
+/* ── Primary button states ── */
+.btn-primary:focus-visible {
+  outline: 3px solid var(--color-coral);
+  outline-offset: 3px;
+}
+
+/* ── Night mode text overrides ── */
+.night-screen h2,
+.night-screen p {
+  color: #EEE8FF;
+}
+
+/* ── Tummy window glow ── */
+.tummy-window-glow {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ── Smooth page transitions ── */
+.screen {
+  animation: screenSlideUp 0.38s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ── Request item status colors ── */
+.status-pending  { background: #FFE5C0; color: #7A4A00; }
+.status-accepted { background: #C8EDD0; color: #1A5A28; }
+
+/* ── Reduced motion support ── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-breathe,
+  .animate-glow,
+  .animate-sparkle {
+    animation: none !important;
+  }
+
+  .animate-bounce,
+  .animate-slide-up,
+  .animate-fade-in,
+  .animate-logo,
+  .animate-heart-pop,
+  .animate-wave {
+    animation: screenFadeIn 0.2s ease both !important;
+  }
+}
+
+/* ── Desktop centering (non-mobile) ── */
+@media (min-width: 480px) {
+  body {
+    background: #F0E8DC;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .app-container {
+    box-shadow: 0 0 80px rgba(61, 44, 44, 0.15);
+    border-radius: 0;
+  }
+}
+
+/* ── Safe area insets (iOS) ── */
+@supports (padding: max(0px)) {
+  .screen {
+    padding-top: max(var(--space-xl), env(safe-area-inset-top));
+    padding-bottom: max(var(--space-lg), env(safe-area-inset-bottom));
+  }
+}
